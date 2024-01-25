@@ -1,34 +1,34 @@
 **Question 1. Knowing docker tags**
-  Answser = -rm
-  Steps:
-    run command docker run --help and look for correct option
+<p>Answser = -rm<br>
+  Steps:<br>
+    run command docker run --help and look for correct option</p>
    
 
 **Question 2. Understanding docker first run**
-  Answer = 0.42.0
-  Steps: Run pip list and look for the wheel package
+<p>Answer = 0.42.0<br>
+Steps: Run pip list and look for the wheel package</p>
 
 
 **Question 3. Count records**
-Answer = 15612
-Query:
+<p>Answer = 15612<br>
+Query:<br>
 select count(*) from green_taxi_data
 where
 lpep_pickup_datetime between '2019-09-18 00:00:00' and '2019-09-18 23:59:59'
 and
-lpep_dropoff_datetime between '2019-09-18 00:00:00' and '2019-09-18 23:59:59';
+lpep_dropoff_datetime between '2019-09-18 00:00:00' and '2019-09-18 23:59:59';</p>
 
 
 **Question 4. Largest trip for each day**
-Answer = 2019-09-26
-Query:
+<p>Answer = 2019-09-26<br>
+Query:<br>
 select lpep_pickup_datetime, trip_distance from green_taxi_data
-order by trip_distance desc;
+order by trip_distance desc;</p>
 
 
 **Question 5. Three biggest pick up Boroughs**
-Answer = Brooklyn, Manhattan, Queens
-Query:
+<p>Answer = Brooklyn, Manhattan, Queens<br>
+Query:<br>
 select 
 	z."Borough", sum(g.total_amount) as sum_total
 from green_taxi_data g
@@ -39,9 +39,12 @@ where
 	z."Borough" != 'Unknown'
 group by z."Borough"
 order by sum_total desc;
+</p>
 
 
 **Question 6. Largest tip**
+<p>Answer = JFK Airport<br>
+Query:<br>
 select 
 	g.tip_amount, zpu."Zone", zdo."Zone"
 from 
@@ -53,6 +56,7 @@ where
 	g."DOLocationID" = zdo."LocationID" and
 	zpu."Zone" = 'Astoria'
 order by g.tip_amount desc
+</p>
 
 
 **Question 7. Creating Resources**
